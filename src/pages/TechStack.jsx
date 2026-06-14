@@ -11,8 +11,9 @@ function TechStack() {
       <main className="flex-grow pt-[100px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full pb-20">
         {/* Hero Section */}
         <section className="py-16 md:py-24 text-center max-w-3xl mx-auto" data-animate="fade-up">
-          <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">The SYNQUORA Stack</h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant">Precision engineering across hardware and software layers for seamless offline performance.</p>
+          <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">SYNQUORA STACK</h1>
+          <p className="font-label-caps text-label-caps text-secondary mb-4 tracking-wider">Hardware + Software Architecture</p>
+          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">SYNQUORA combines embedded hardware and lightweight software technologies to create a reliable offline attendance system.</p>
         </section>
 
         {/* Hardware Section */}
@@ -29,12 +30,14 @@ function TechStack() {
                   <span className="material-symbols-outlined text-3xl" data-icon="developer_board">developer_board</span>
                 </div>
               </div>
-              <h3 className="font-headline-md text-headline-md text-primary mb-2">ESP32 Dual-Core Microcontroller</h3>
-              <p className="text-on-surface-variant mb-6 font-body-md text-body-md">The high-performance core driving processing and connectivity.</p>
+              <h3 className="font-headline-md text-headline-md text-primary mb-2">ESP32 Microcontroller</h3>
+              <p className="text-on-surface-variant mb-6 font-body-md text-body-md">The main processing unit of SYNQUORA.</p>
+              <p className="font-label-caps text-label-caps text-secondary mb-2 tracking-wider">Features:</p>
               <ul className="space-y-3 font-code-sm text-code-sm text-on-surface-variant">
-                <li className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span> 240MHz Processing Power</li>
-                <li className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span> Integrated Wi-Fi/BT</li>
-                <li className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span> Low Power Consumption</li>
+                <li className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span> Dual-core processing</li>
+                <li className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span> Built-in Wi-Fi connectivity</li>
+                <li className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span> Handles attendance requests</li>
+                <li className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span> Hosts the local web server</li>
               </ul>
             </div>
 
@@ -46,10 +49,12 @@ function TechStack() {
                 </div>
               </div>
               <h3 className="font-headline-md text-headline-md text-primary mb-2">DS1307 RTC Module</h3>
-              <p className="text-on-surface-variant mb-6 font-body-md text-body-md">Ensuring absolute temporal accuracy offline.</p>
+              <p className="text-on-surface-variant mb-6 font-body-md text-body-md">Provides accurate offline time tracking.</p>
+              <p className="font-label-caps text-label-caps text-secondary mb-2 tracking-wider">Used for:</p>
               <ul className="space-y-3 font-code-sm text-code-sm text-on-surface-variant">
-                <li className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span> Real-time synchronization</li>
-                <li className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span> Battery-backed reliability</li>
+                <li className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span> Attendance timestamps</li>
+                <li className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span> Session timing</li>
+                <li className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span> Record accuracy</li>
               </ul>
             </div>
           </div>
@@ -63,19 +68,29 @@ function TechStack() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             <div className="glass-card rounded-xl p-6" data-animate="fade-up" data-animate-delay="100">
-              <h3 className="font-label-caps text-label-caps text-secondary mb-4 tracking-wider">CORE LOGIC</h3>
-              <h4 className="font-headline-md text-headline-md text-primary mb-2">C++</h4>
-              <p className="text-on-surface-variant font-code-sm text-code-sm">Arduino Framework for bare-metal performance.</p>
+              <h3 className="font-label-caps text-label-caps text-secondary mb-4 tracking-wider">FIRMWARE</h3>
+              <h4 className="font-headline-md text-[18px] text-primary mb-2">C++ with Arduino Framework</h4>
+              <p className="font-label-caps text-[10px] text-secondary mb-2 tracking-wider">Used for:</p>
+              <ul className="text-on-surface-variant font-code-sm text-code-sm list-disc ml-4 space-y-1">
+                <li>ESP32 programming</li>
+                <li>Attendance processing</li>
+                <li>Hardware control</li>
+              </ul>
             </div>
             <div className="glass-card rounded-xl p-6" data-animate="fade-up" data-animate-delay="200">
-              <h3 className="font-label-caps text-label-caps text-secondary mb-4 tracking-wider">NETWORK</h3>
-              <h4 className="font-headline-md text-headline-md text-primary mb-2">Async Web Server</h4>
-              <p className="text-on-surface-variant font-code-sm text-code-sm">Non-blocking request handling for high throughput.</p>
+              <h3 className="font-label-caps text-label-caps text-secondary mb-4 tracking-wider">WEB INTERFACE</h3>
+              <h4 className="font-headline-md text-[18px] text-primary mb-2">HTML, CSS, JavaScript</h4>
+              <p className="font-label-caps text-[10px] text-secondary mb-2 tracking-wider">Provides:</p>
+              <ul className="text-on-surface-variant font-code-sm text-code-sm list-disc ml-4 space-y-1">
+                <li>Student attendance form</li>
+                <li>Teacher dashboard</li>
+                <li>Real-time updates</li>
+              </ul>
             </div>
             <div className="glass-card rounded-xl p-6" data-animate="fade-up" data-animate-delay="300">
-              <h3 className="font-label-caps text-label-caps text-secondary mb-4 tracking-wider">INTERFACE</h3>
-              <h4 className="font-headline-md text-headline-md text-primary mb-2">HTML5 / JS</h4>
-              <p className="text-on-surface-variant font-code-sm text-code-sm">Modern, responsive student interface rendering.</p>
+              <h3 className="font-label-caps text-label-caps text-secondary mb-4 tracking-wider">NETWORK SYSTEM</h3>
+              <h4 className="font-headline-md text-[18px] text-primary mb-2">ESP32 Local Web Server</h4>
+              <p className="text-on-surface-variant font-code-sm text-code-sm">Creates a local Wi-Fi environment where students connect and submit attendance without internet.</p>
             </div>
           </div>
         </section>
@@ -88,29 +103,28 @@ function TechStack() {
           </div>
           <div className="glass-card rounded-xl p-8 relative overflow-hidden" data-animate="fade-up" data-animate-delay="100">
             <div className="absolute right-0 top-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-            <h3 className="font-headline-md text-headline-md text-primary mb-4">SPIFFS</h3>
-            <p className="font-label-caps text-label-caps text-secondary mb-6">Serial Peripheral Interface Flash File System</p>
+            <h3 className="font-headline-md text-headline-md text-primary mb-4">SPIFFS Storage</h3>
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1">
                 <p className="text-on-surface-variant font-body-md text-body-md mb-4">
-                  SPIFFS provides lightweight, reliable non-volatile local storage directly on the microcontroller. It is designed specifically for SPI NOR flash devices, ensuring data integrity even during power loss.
+                  Local flash storage used for saving:
                 </p>
+                <ul className="list-disc ml-5 font-body-md text-on-surface-variant space-y-1 mb-4">
+                  <li>Attendance records</li>
+                  <li>Session data</li>
+                  <li>Web files</li>
+                </ul>
               </div>
-              <div className="flex-1 bg-surface rounded-lg p-6 border border-surface-variant flex flex-col items-center text-center justify-center">
-                <ul className="space-y-4 font-code-sm text-code-sm flex flex-col items-center text-center justify-center">
-                  <li className="flex items-start gap-3 flex-col items-center">
+              <div className="flex-1 bg-surface rounded-lg p-6 border border-surface-variant flex flex-col justify-center">
+                <h4 className="font-label-caps text-secondary mb-4 tracking-wider text-center">Benefits</h4>
+                <ul className="space-y-4 font-code-sm text-code-sm">
+                  <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-secondary text-lg" data-icon="storage">storage</span>
-                    <div>
-                      <span className="font-bold text-primary block">Wear Leveling</span>
-                      <span className="text-on-surface-variant">Extends flash memory lifespan across write cycles.</span>
-                    </div>
+                    <span className="text-on-surface-variant font-bold">Non-volatile storage</span>
                   </li>
-                  <li className="flex items-start gap-3 flex-col items-center">
+                  <li className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-secondary text-lg" data-icon="offline_pin">offline_pin</span>
-                    <div>
-                      <span className="font-bold text-primary block">Offline Persistence</span>
-                      <span className="text-on-surface-variant">Stores attendance records until sync is available.</span>
-                    </div>
+                    <span className="text-on-surface-variant font-bold">Data remains after restart</span>
                   </li>
                 </ul>
               </div>

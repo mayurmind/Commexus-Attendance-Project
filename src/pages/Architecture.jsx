@@ -20,7 +20,7 @@ function Architecture() {
         <section className="flex flex-col items-center text-center gap-stack-unit mb-24 animate-[fadeIn_0.8s_ease-out]">
           <span className="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20" data-animate="fade-up">System Blueprint</span>
           <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight mb-4" data-animate="fade-up" data-animate-delay="100">Architecture Deep Dive</h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12" data-animate="fade-up" data-animate-delay="200">Explore the offline, high-availability hardware topography powering the SYNQUORA Smart Attendance System.</p>
+          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12" data-animate="fade-up" data-animate-delay="200">Explore the hardware and data flow behind the SYNQUORA Smart Attendance System.</p>
           <div className="w-full rounded-xl overflow-hidden glass-panel p-2 md:p-6 relative group" data-animate="scale-up" data-animate-delay="300">
             <div className="absolute inset-0 bg-gradient-to-tr from-secondary/5 via-transparent to-tertiary-fixed-dim/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
             <img alt="Architecture Diagram" className="w-full h-auto rounded-lg shadow-sm border border-outline-variant/20 object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvrGW2GRo1qU3b-MHIyYIzukR82wLTm45HPHw89YOxshVgxR-rBBo_GMIYUqR7WKJ3Bof5SE6dJjI5fFhiz3jioUNYXDCNcbPw5WxGa8jXVb7t7Wb3sDmeAAR9FIb_-kyobzIbXsnDJELUDDFb6Iw5sTbsP4VtJsRe8kpKA2O1Jt7bbBE8BR3wzNY6c9kbVojf73lRUpQTjySG4gQ7zdYZ9fCstI0PyqS50ds7eJRnkrl2WnNgMvcViO8c" />
@@ -44,7 +44,17 @@ function Architecture() {
                 <span className="font-label-caps text-label-caps text-on-surface-variant bg-surface-variant/50 px-3 py-1 rounded-full">Core Server</span>
               </div>
               <h3 className="font-headline-md text-headline-md text-primary mb-3 relative z-10">ESP32 Microcontroller</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant max-w-lg relative z-10">The central processing unit that orchestrates the entire localized ecosystem. It simultaneously manages the Wi-Fi Access Point, serves the captive web portal to student devices, and processes incoming attendance payloads with sub-second latency.</p>
+              <div className="font-body-md text-body-md text-on-surface-variant max-w-lg relative z-10">
+                The ESP32 acts as the core processing unit.
+                <p className="mt-2 font-medium">Responsibilities:</p>
+                <ul className="list-disc ml-5 mt-1">
+                  <li>Creates local Wi-Fi network</li>
+                  <li>Hosts attendance webpage</li>
+                  <li>Handles student requests</li>
+                  <li>Processes attendance data</li>
+                  <li>Controls storage operations</li>
+                </ul>
+              </div>
             </div>
 
             {/* RTC (Spans 4 cols) */}
@@ -53,8 +63,16 @@ function Architecture() {
               <div className="w-12 h-12 rounded-xl bg-surface border border-outline-variant/30 flex items-center justify-center shadow-sm mb-6">
                 <span className="material-symbols-outlined text-secondary text-[28px]">schedule</span>
               </div>
-              <h3 className="font-headline-md text-[20px] font-semibold text-primary mb-2">DS1307 RTC</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant">Provides rigorous, offline real-time clock synchronization. Ensures every attendance log is cryptographically stamped with accurate temporal data, independent of internet connectivity.</p>
+              <h3 className="font-headline-md text-[20px] font-semibold text-primary mb-2">DS1307 RTC Module</h3>
+              <div className="font-body-md text-body-md text-on-surface-variant">
+                The RTC module provides independent time tracking. It ensures every attendance record contains accurate:
+                <ul className="list-disc ml-5 mt-1 mb-2">
+                  <li>Date</li>
+                  <li>Time</li>
+                  <li>Session information</li>
+                </ul>
+                without internet synchronization.
+              </div>
             </div>
 
             {/* SPIFFS (Spans 5 cols) */}
@@ -64,7 +82,15 @@ function Architecture() {
                 <span className="material-symbols-outlined text-secondary text-[28px]">storage</span>
               </div>
               <h3 className="font-headline-md text-[20px] font-semibold text-primary mb-2">SPIFFS Storage</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant">Embedded flash-based file system. Securely stores HTML/CSS/JS assets for the captive portal and acts as the highly reliable, non-volatile database for raw attendance records before syncing.</p>
+              <div className="font-body-md text-body-md text-on-surface-variant">
+                SPIFFS is used for local data storage. It stores:
+                <ul className="list-disc ml-5 mt-1 mb-2">
+                  <li>Web interface files</li>
+                  <li>Attendance records</li>
+                  <li>Session information</li>
+                </ul>
+                Data remains available even after power restart.
+              </div>
             </div>
 
             {/* Wi-Fi Hub (Spans 7 cols) */}
@@ -80,8 +106,8 @@ function Architecture() {
                   <span className="w-2 h-2 rounded-full bg-secondary/20"></span>
                 </div>
               </div>
-              <h3 className="font-headline-md text-headline-md text-primary mb-3 relative z-10">Localized Wi-Fi Hub</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant max-w-md relative z-10">A dedicated, closed-loop Access Point (AP) generated by the ESP32. It creates a geofenced digital perimeter, allowing only physically present student devices to connect and transmit attendance data securely.</p>
+              <h3 className="font-headline-md text-headline-md text-primary mb-3 relative z-10">Local Wi-Fi Network</h3>
+              <p className="font-body-md text-body-md text-on-surface-variant max-w-md relative z-10">The ESP32 creates a private local communication network. Students connect directly to this network to submit attendance securely within the classroom.</p>
             </div>
           </div>
         </section>
@@ -96,46 +122,44 @@ function Architecture() {
             {/* Abstract connecting line background for desktop */}
             <div className="hidden md:block absolute top-1/2 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-secondary/30 to-transparent -translate-y-1/2 z-0"></div>
             <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-4 relative z-10">
-              {/* Step 1: Teacher App */}
-              <div className="flex flex-col items-center text-center w-full md:w-1/3">
+              {/* Step 1: Teacher Dashboard */}
+              <div className="flex flex-col items-center text-center w-full md:w-1/4">
                 <div className="w-20 h-20 rounded-2xl bg-surface border border-outline-variant/50 shadow-md flex items-center justify-center mb-6 relative group cursor-default">
                   <div className="absolute inset-0 rounded-2xl bg-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
                   <span className="material-symbols-outlined text-primary text-[36px] relative z-10">tablet_mac</span>
                 </div>
-                <h4 className="font-headline-md text-[18px] font-bold text-primary mb-2">Teacher App</h4>
-                <p className="font-body-md text-sm text-on-surface-variant px-4">Initiates the session. Sends configuration parameters and starts the localized AP on the server node.</p>
+                <h4 className="font-headline-md text-[18px] font-bold text-primary mb-2">Teacher Dashboard</h4>
+                <p className="font-body-md text-sm text-on-surface-variant px-4">Creates attendance session and configures lecture details.</p>
               </div>
 
               {/* Arrow 1 */}
               <div className="hidden md:flex flex-col items-center text-secondary/50">
                 <span className="material-symbols-outlined text-[32px] animate-pulse">arrow_forward</span>
               </div>
-              {/* Mobile Arrow */}
               <div className="md:hidden flex items-center justify-center text-secondary/50">
                 <span className="material-symbols-outlined text-[32px]">arrow_downward</span>
               </div>
 
-              {/* Step 2: ESP32 Node */}
-              <div className="flex flex-col items-center text-center w-full md:w-1/3">
+              {/* Step 2: ESP32 Core */}
+              <div className="flex flex-col items-center text-center w-full md:w-1/4">
                 <div className="w-24 h-24 rounded-full bg-secondary border-[4px] border-surface shadow-lg flex items-center justify-center mb-6 relative group cursor-default glow-accent">
                   <div className="absolute inset-0 rounded-full bg-secondary opacity-50 blur-xl animate-pulse"></div>
                   <span className="material-symbols-outlined text-on-secondary text-[40px] relative z-10" style={{ fontVariationSettings: "'FILL' 1" }}>router</span>
                 </div>
                 <h4 className="font-headline-md text-[18px] font-bold text-primary mb-2">ESP32 Core</h4>
-                <p className="font-body-md text-sm text-on-surface-variant px-4">Acts as the nexus. Broadcasts SSID, hosts the captive portal, and logs timestamps via RTC to SPIFFS.</p>
+                <p className="font-body-md text-sm text-on-surface-variant px-4">Creates local Wi-Fi network, hosts webpage, processes requests.</p>
               </div>
 
               {/* Arrow 2 */}
               <div className="hidden md:flex flex-col items-center text-secondary/50">
                 <span className="material-symbols-outlined text-[32px] animate-pulse">arrow_forward</span>
               </div>
-              {/* Mobile Arrow */}
               <div className="md:hidden flex items-center justify-center text-secondary/50">
                 <span className="material-symbols-outlined text-[32px]">arrow_downward</span>
               </div>
 
-              {/* Step 3: Student Nodes */}
-              <div className="flex flex-col items-center text-center w-full md:w-1/3">
+              {/* Step 3: Student Devices */}
+              <div className="flex flex-col items-center text-center w-full md:w-1/4">
                 <div className="relative w-24 h-20 mb-6 flex justify-center items-end">
                   <div className="absolute left-0 bottom-0 w-14 h-14 rounded-xl bg-surface border border-outline-variant/50 shadow-sm flex items-center justify-center translate-x-2 translate-y-2 opacity-60">
                     <span className="material-symbols-outlined text-primary text-[24px]">smartphone</span>
@@ -147,8 +171,26 @@ function Architecture() {
                     <span className="material-symbols-outlined text-primary text-[28px]">smartphone</span>
                   </div>
                 </div>
-                <h4 className="font-headline-md text-[18px] font-bold text-primary mb-2">Student Nodes</h4>
-                <p className="font-body-md text-sm text-on-surface-variant px-4">Connect to the localized hub, submit unique credentials, and receive confirmation without external internet.</p>
+                <h4 className="font-headline-md text-[18px] font-bold text-primary mb-2">Student Devices</h4>
+                <p className="font-body-md text-sm text-on-surface-variant px-4">Students submit attendance using smartphones.</p>
+              </div>
+
+              {/* Arrow 3 */}
+              <div className="hidden md:flex flex-col items-center text-secondary/50">
+                <span className="material-symbols-outlined text-[32px] animate-pulse">arrow_forward</span>
+              </div>
+              <div className="md:hidden flex items-center justify-center text-secondary/50">
+                <span className="material-symbols-outlined text-[32px]">arrow_downward</span>
+              </div>
+
+              {/* Step 4: SPIFFS Storage */}
+              <div className="flex flex-col items-center text-center w-full md:w-1/4">
+                <div className="w-20 h-20 rounded-2xl bg-surface border border-outline-variant/50 shadow-md flex items-center justify-center mb-6 relative group cursor-default">
+                  <div className="absolute inset-0 rounded-2xl bg-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+                  <span className="material-symbols-outlined text-primary text-[36px] relative z-10">storage</span>
+                </div>
+                <h4 className="font-headline-md text-[18px] font-bold text-primary mb-2">SPIFFS Storage</h4>
+                <p className="font-body-md text-sm text-on-surface-variant px-4">Records are stored locally and used for report generation.</p>
               </div>
             </div>
           </div>

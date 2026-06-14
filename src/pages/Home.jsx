@@ -19,7 +19,7 @@ function Home() {
               <span className="text-headline-md font-headline-md text-on-surface-variant block mt-2">Smart Offline Attendance Management System</span>
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-              Seamless offline attendance through ESP32 and smartphones. Precision engineering for modern educational institutions, bypassing network unreliability.
+              Next-generation offline attendance solution powered by ESP32 and smartphones. SYNQUORA enables fast, secure, and reliable classroom attendance without depending on internet connectivity, cloud services, or expensive biometric hardware.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto" data-animate="fade-up" data-animate-delay="200">
               <button onClick={() => navigate('/features')} className="bg-secondary text-white px-8 py-3 rounded-full font-label-caps tracking-wider uppercase hover:shadow-[0px_10px_20px_rgba(0,88,190,0.3)] transition-all duration-300 ease-in-out hover:-translate-y-1">
@@ -35,14 +35,42 @@ function Home() {
             <img alt="3D ESP32 network illustration" className="w-full h-auto object-contain relative z-10 drop-shadow-2xl rounded-xl transition-transform duration-500 hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida/AP1WRLuXZzlx5mnHERE1d-Weiobk9PmwBpgkfdQQ9HJr1sgLot2HQJWIJq3q74oUJVk9sbcJ6V9s1X3akZUKmzpZN7OrjDeLTkqwBsD95fO5-ujhzX3kIo6OvHLxj-nyNs04IAw3wN-aL9R2b6mvxS7xK4LwEj68iulCAfr7f92BZDCvBvWKeSENphZXCV7MnvdesK3neklfEcJTNx9AdT0KQhMKrCZ9Yb-BygDTbooYV4kXRN-jZjmQZ5APLNsl" />
           </div>
         </section>
-        
+
         {/* Problem/Solution Section */}
         <section className="w-full flex flex-col items-center gap-12 mt-8">
-          <div className="text-center max-w-3xl flex flex-col gap-4" data-animate="fade-up">
-            <h2 className="font-headline-md text-headline-md text-primary">The Flaws of Legacy Systems</h2>
-            <p className="font-body-md text-body-md text-on-surface-variant">
-              Manual roll calls consume valuable instructional time. RFID systems require expensive hardware maintenance. Biometric scanners suffer from slow throughput and hygiene concerns. Most modern digital solutions fail the moment the campus network drops.
-            </p>
+          <div className="text-left md:text-center max-w-4xl flex flex-col gap-6" data-animate="fade-up">
+            <h2 className="font-headline-md text-headline-md text-primary">The Problems With Traditional Attendance Systems</h2>
+            <div className="font-body-md text-body-md text-on-surface-variant grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+              <div>
+                <strong className="text-primary block mb-2">Manual Roll Calls</strong>
+                <ul className="list-disc ml-5">
+                  <li>Consume valuable lecture time.</li>
+                  <li>Increase chances of human errors.</li>
+                  <li>Become difficult to manage in large classrooms.</li>
+                </ul>
+              </div>
+              <div>
+                <strong className="text-primary block mb-2">RFID-Based Systems</strong>
+                <ul className="list-disc ml-5">
+                  <li>Require dedicated hardware and student cards.</li>
+                  <li>Increase maintenance and installation costs.</li>
+                </ul>
+              </div>
+              <div>
+                <strong className="text-primary block mb-2">Biometric Systems</strong>
+                <ul className="list-disc ml-5">
+                  <li>Have slower processing speed.</li>
+                  <li>Require physical contact and maintenance.</li>
+                </ul>
+              </div>
+              <div>
+                <strong className="text-primary block mb-2">Cloud-Based Attendance Systems</strong>
+                <ul className="list-disc ml-5">
+                  <li>Depend heavily on internet availability.</li>
+                  <li>Stop functioning during network failures.</li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             {/* Solution Card 1 */}
@@ -50,9 +78,10 @@ function Home() {
               <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-2">
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>wifi_off</span>
               </div>
-              <h3 className="font-headline-md text-[20px] text-primary">Offline-First Resiliency</h3>
+              <h3 className="font-headline-md text-[20px] text-primary">Offline-First Reliability</h3>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                SYNQUORA operates entirely independently of external internet infrastructure, guaranteeing 100% uptime during local network outages.
+                SYNQUORA is designed to work independently inside the classroom environment.<br /><br />
+                The ESP32 creates a local attendance network, allowing students and teachers to use the system even without internet connectivity.
               </p>
             </div>
             {/* Solution Card 2 */}
@@ -60,9 +89,10 @@ function Home() {
               <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-2">
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
               </div>
-              <h3 className="font-headline-md text-[20px] text-primary">Rapid Transaction</h3>
+              <h3 className="font-headline-md text-[20px] text-primary">Instant Attendance Processing</h3>
               <p className="font-body-md text-body-md text-on-surface-variant">
-                Process an entire classroom's attendance in seconds, not minutes. The decentralized ESP32 hub handles concurrent connections effortlessly.
+                Mark attendance for an entire classroom within seconds.<br /><br />
+                The ESP32 handles multiple student requests simultaneously through an optimized queue-based processing system, ensuring smooth attendance collection without data loss.
               </p>
             </div>
             {/* Solution Card 3 */}
@@ -71,9 +101,16 @@ function Home() {
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>devices</span>
               </div>
               <h3 className="font-headline-md text-[20px] text-primary">BYOD Architecture</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                Leverages the computing power already in students' pockets. No dedicated physical tokens or scanning stations required.
-              </p>
+              <div className="font-body-md text-body-md text-on-surface-variant">
+                SYNQUORA uses devices students already own.
+                <p className="mt-2">Students can mark attendance using:</p>
+                <ul className="list-disc ml-5 mt-1 mb-2">
+                  <li>Smartphones</li>
+                  <li>Tablets</li>
+                  <li>Laptops</li>
+                </ul>
+                No RFID cards, biometric devices, or additional hardware are required.
+              </div>
             </div>
           </div>
         </section>
@@ -95,18 +132,25 @@ function Home() {
                     <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>cloud_off</span>
                   </div>
                   <h3 className="font-display-lg-mobile text-display-lg-mobile text-primary mb-4">True Offline Operation</h3>
-                  <p className="font-body-lg text-body-lg text-on-surface-variant max-w-md">
-                    The ESP32 acts as an autonomous localized access point and server. Data is stored locally on SPIFFS storage and syncs to the central database only when an upstream connection is re-established.
-                  </p>
+                  <div className="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    The ESP32 works as a standalone attendance server by:
+                    <ul className="list-disc ml-5 mt-2 mb-4">
+                      <li>Creating a local Wi-Fi network</li>
+                      <li>Hosting the attendance webpage</li>
+                      <li>Processing attendance requests</li>
+                      <li>Storing records locally using SPIFFS storage</li>
+                    </ul>
+                    The system continues working without internet access.
+                  </div>
                 </div>
               </div>
             </div>
             {/* Bento Item 2: Small Feature */}
             <div className="md:col-span-2 md:row-span-1 glass-card rounded-2xl p-8 flex flex-row items-center justify-between group card-shine" data-animate="fade-up" data-animate-delay="250">
               <div className="flex flex-col gap-2 max-w-[60%]">
-                <h3 className="font-headline-md text-headline-md text-primary">Smartphone-Based</h3>
+                <h3 className="font-headline-md text-headline-md text-primary">Smartphone-Based Attendance</h3>
                 <p className="font-body-md text-body-md text-on-surface-variant">
-                  Students connect via a lightweight mobile app, eliminating hardware costs and queues.
+                  Students connect to the local network and access a lightweight browser-based attendance interface. This reduces hardware dependency and makes attendance faster and easier.
                 </p>
               </div>
               <div className="w-20 h-20 rounded-full bg-surface flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300">
@@ -116,9 +160,9 @@ function Home() {
             {/* Bento Item 3: Small Feature */}
             <div className="md:col-span-2 md:row-span-1 glass-card rounded-2xl p-8 flex flex-row items-center justify-between group card-shine" data-animate="fade-up" data-animate-delay="400">
               <div className="flex flex-col gap-2 max-w-[60%]">
-                <h3 className="font-headline-md text-headline-md text-primary">Tamper-Proof Time</h3>
+                <h3 className="font-headline-md text-headline-md text-primary">Accurate Time Tracking</h3>
                 <p className="font-body-md text-body-md text-on-surface-variant">
-                  Integrated RTC module ensures log integrity, preventing device-level time manipulation.
+                  The integrated DS1307 RTC module provides accurate date and time information. Each attendance record is stored with a reliable timestamp without requiring internet time synchronization.
                 </p>
               </div>
               <div className="w-20 h-20 rounded-full bg-surface flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300">
