@@ -1,9 +1,32 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { usePageAnimations } from '../hooks/usePageAnimations';
+import { useState } from 'react';
 
 function Contact() {
   usePageAnimations();
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+    formData.append("access_key", "76bf2206-821d-40bd-99b6-712d8760c45b");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      setResult("Error");
+    }
+  };
+
   return (
     <>
       {/* Ambient Background Glows */}
@@ -26,26 +49,27 @@ function Contact() {
             <h2 className="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-2">
               <span className="material-symbols-outlined text-secondary">mail</span> Send a Message
             </h2>
-            <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert('Message Transmitted Successfully!'); e.target.reset(); }}>
+            <form className="space-y-6" onSubmit={onSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2 input-glow group">
                   <label className="font-label-caps text-label-caps text-outline-variant group-focus-within:text-secondary transition-colors">Name</label>
-                  <input required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all" placeholder="Jane Doe" type="text" />
+                  <input name="name" required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all" placeholder="Jane Doe" type="text" />
                 </div>
                 <div className="flex flex-col gap-2 input-glow group">
                   <label className="font-label-caps text-label-caps text-outline-variant group-focus-within:text-secondary transition-colors">Email</label>
-                  <input required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all" placeholder="jane@company.com" type="email" />
+                  <input name="email" required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all" placeholder="jane@company.com" type="email" />
                 </div>
               </div>
               <div className="flex flex-col gap-2 input-glow group">
                 <label className="font-label-caps text-label-caps text-outline-variant group-focus-within:text-secondary transition-colors">Subject</label>
-                <input required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all" placeholder="Partnership Inquiry" type="text" />
+                <input name="subject" required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all" placeholder="Partnership Inquiry" type="text" />
               </div>
               <div className="flex flex-col gap-2 input-glow group">
                 <label className="font-label-caps text-label-caps text-outline-variant group-focus-within:text-secondary transition-colors">Message</label>
-                <textarea required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all resize-none" placeholder="How can we help you?" rows="4"></textarea>
+                <textarea name="message" required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all resize-none" placeholder="How can we help you?" rows="4"></textarea>
               </div>
               <button className="bg-secondary text-on-secondary w-full py-3 rounded-lg font-label-caps text-label-caps hover:opacity-90 transition-all duration-300 ease-in-out shadow-[0_8px_16px_rgba(0,88,190,0.2)] hover:shadow-[0_12px_24px_rgba(0,88,190,0.3)] hover:-translate-y-1" type="submit">Transmit Message</button>
+              {result && <div className="text-center mt-4 font-body-md text-secondary">{result}</div>}
             </form>
           </div>
         </section>
