@@ -126,8 +126,8 @@ function Working() {
 
           {/* Step 7 */}
           <div className="relative flex gap-gutter group" data-animate="fade-up" data-animate-delay="100">
-            <div className="w-12 h-12 rounded-full step-icon-container flex items-center justify-center shrink-0 border-2 border-secondary bg-secondary">
-              <span className="material-symbols-outlined text-white" style={{ fontVariationSettings: "'FILL' 1" }}>download</span>
+            <div className="w-12 h-12 rounded-full step-icon-container flex items-center justify-center shrink-0 border-2 border-secondary">
+              <span className="material-symbols-outlined text-[#004395]" style={{ fontVariationSettings: "'FILL' 1" }}>download</span>
             </div>
             <div className="glass-card rounded-xl p-6 md:p-8 flex-grow border-l-4 border-l-secondary transform transition-all duration-300 group-hover:-translate-y-1">
               <div className="font-label-caps text-label-caps text-secondary mb-2">STEP 7</div>
