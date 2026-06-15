@@ -18,7 +18,7 @@ function PrivacyPolicy() {
             <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary max-w-2xl">
               Privacy Policy
             </h1>
-            <p className="text-on-surface-variant mt-4 font-body-md">Last Updated: October 2026</p>
+            <p className="text-on-surface-variant mt-4 font-body-md">Last Updated: June 2026</p>
           </div>
         </div>
 
