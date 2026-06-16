@@ -59,7 +59,7 @@ function LoadingScreen({ onComplete }) {
         {/* Brand Content */}
         <div className="relative overflow-hidden flex items-center justify-center w-full px-4">
           <h1 
-            className={`font-display-lg text-primary tracking-tight min-h-[60px] flex items-center justify-center text-center transition-transform duration-1000 ease-out max-w-full ${!isFinished ? 'typewriter-cursor' : ''}`}
+            className={`font-brand font-bold text-primary tracking-wider min-h-[60px] flex items-center justify-center text-center transition-transform duration-1000 ease-out max-w-full ${!isFinished ? 'typewriter-cursor' : ''}`}
             style={{ 
               transform: scaleUp ? 'scale(1.02)' : 'scale(1)', 
               fontSize: 'clamp(2.5rem, 12vw, 12rem)', 

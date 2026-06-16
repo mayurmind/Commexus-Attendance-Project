@@ -70,6 +70,10 @@ export default {
               "stack-unit": "8px"
       },
       "fontFamily": {
+              "brand": [
+                      "Outfit",
+                      "sans-serif"
+              ],
               "display-lg": [
                       "Inter"
               ],
