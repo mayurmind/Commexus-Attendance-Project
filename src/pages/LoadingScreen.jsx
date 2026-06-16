@@ -119,7 +119,7 @@ function LoadingScreen({ onComplete }) {
         <div className="w-full relative">
           <div className="flex justify-between items-center mb-2 px-2">
             <span className="text-xs md:text-sm font-semibold tracking-widest text-slate-400 uppercase font-brand">
-              {progress < 100 ? 'Rendering 3D Matrix...' : 'System Ready'}
+              {progress < 100 ? 'Loading the SYNQUORA...' : 'System Ready'}
             </span>
             <span className="text-sm md:text-base font-bold text-indigo-600 font-brand">
               {Math.floor(progress)}%
