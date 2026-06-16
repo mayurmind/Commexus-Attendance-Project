@@ -1,88 +1,140 @@
 import { useEffect, useState } from 'react';
 
 function LoadingScreen({ onComplete }) {
-  const brandName = "SYNQUORA";
-  const [typedText, setTypedText] = useState("");
-  const [isFinished, setIsFinished] = useState(false);
-  const [scaleUp, setScaleUp] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [isFadingOut, setIsFadingOut] = useState(false);
+
+  const fullText = "SYNQUORA";
 
   useEffect(() => {
-    let index = 0;
-    const typingSpeed = 150; // ms per letter
-    let typeTimeout;
+    let currentProgress = 0;
+    
+    const interval = setInterval(() => {
+      // Smoother, slightly slower jumps so the typing effect is visible
+      currentProgress += Math.random() * 6 + 1;
+      if (currentProgress > 100) currentProgress = 100;
+      setProgress(currentProgress);
 
-    const typeWriter = () => {
-      if (index < brandName.length) {
-        setTypedText(brandName.substring(0, index + 1));
-        index++;
-        typeTimeout = setTimeout(typeWriter, typingSpeed);
-      } else {
-        setIsFinished(true);
+      if (currentProgress === 100) {
+        clearInterval(interval);
         setTimeout(() => {
-          setScaleUp(true);
-        }, 100);
-
-        if (onComplete) {
-          setTimeout(onComplete, 1200); // Wait for the scale animation, then trigger onComplete
-        }
+          setIsFadingOut(true);
+          if (onComplete) {
+            setTimeout(onComplete, 800);
+          }
+        }, 800);
       }
-    };
+    }, 120);
 
-    const initialDelay = setTimeout(typeWriter, 800);
-
-    return () => {
-      clearTimeout(typeTimeout);
-      clearTimeout(initialDelay);
-    };
+    return () => clearInterval(interval);
   }, [onComplete]);
 
-  const progressPercentage = brandName.length > 0 ? (typedText.length / brandName.length) * 100 : 0;
+  // Calculate how many characters to show based on progress (from 0 to length)
+  const charCount = Math.floor((progress / 100) * fullText.length);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#ffffff] overflow-hidden">
+    <div 
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-50 transition-all duration-700 ease-in-out ${isFadingOut ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100'}`}
+    >
       <style>
         {`
-          @keyframes blink {
-              from, to { border-color: transparent }
-              50% { border-color: black }
+          .perspective-container {
+            perspective: 1000px;
           }
-          .typewriter-cursor {
-              border-right: 2px solid black;
-              animation: blink 0.75s step-end infinite;
-              padding-right: 4px;
+          
+          .cube-container {
+            width: 160px;
+            height: 160px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateCube 4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          
+          .cube-face {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            background: rgba(79, 70, 229, 0.05);
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(79, 70, 229, 0.1) inset;
+          }
+
+          .cube-face-front  { transform: rotateY(  0deg) translateZ(80px); }
+          .cube-face-back   { transform: rotateY(180deg) translateZ(80px); }
+          .cube-face-right  { transform: rotateY( 90deg) translateZ(80px); }
+          .cube-face-left   { transform: rotateY(-90deg) translateZ(80px); }
+          .cube-face-top    { transform: rotateX( 90deg) translateZ(80px); }
+          .cube-face-bottom { transform: rotateX(-90deg) translateZ(80px); }
+
+          @keyframes rotateCube {
+            0% { transform: rotateX(-20deg) rotateY(0deg); }
+            25% { transform: rotateX(-20deg) rotateY(90deg); }
+            50% { transform: rotateX(-20deg) rotateY(180deg); }
+            75% { transform: rotateX(-20deg) rotateY(270deg); }
+            100% { transform: rotateX(-20deg) rotateY(360deg); }
           }
         `}
       </style>
 
-      {/* Loading Shell */}
-      <main className="relative flex flex-col items-center justify-center space-y-stack-unit h-full w-full">
-        {/* Brand Content */}
-        <div className="relative overflow-hidden flex items-center justify-center w-full px-4">
-          <h1 
-            className={`font-brand font-bold text-primary tracking-wider min-h-[60px] flex items-center justify-center text-center transition-transform duration-1000 ease-out max-w-full ${!isFinished ? 'typewriter-cursor' : ''}`}
-            style={{ 
-              transform: scaleUp ? 'scale(1.02)' : 'scale(1)', 
-              fontSize: 'clamp(2.5rem, 12vw, 12rem)', 
-              lineHeight: '1' 
-            }}
-          >
-            {typedText}
-          </h1>
+      {/* 3D Cube Animation */}
+      <div className="perspective-container mb-16 mt-4">
+        <div className="cube-container">
+          <div className="cube-face cube-face-front">
+            <span className="material-symbols-outlined text-indigo-600/80 text-[80px] drop-shadow-sm">bubble_chart</span>
+          </div>
+          <div className="cube-face cube-face-back">
+            <span className="material-symbols-outlined text-indigo-600/80 text-[80px] drop-shadow-sm">sync</span>
+          </div>
+          <div className="cube-face cube-face-right">
+            <span className="material-symbols-outlined text-indigo-600/80 text-[80px] drop-shadow-sm">token</span>
+          </div>
+          <div className="cube-face cube-face-left">
+            <span className="material-symbols-outlined text-indigo-600/80 text-[80px] drop-shadow-sm">api</span>
+          </div>
+          <div className="cube-face cube-face-top bg-indigo-600/10"></div>
+          <div className="cube-face cube-face-bottom bg-indigo-600/10"></div>
         </div>
         
-        {/* Progress Indicator */}
-        <div className="w-48 h-[1px] bg-surface-container-highest relative overflow-hidden mt-8">
-          <div 
-            className="absolute left-0 top-0 h-full bg-primary transition-all duration-100 ease-linear"
-            style={{ width: `${progressPercentage}%` }}
-          ></div>
+        {/* Floor shadow */}
+        <div className="w-[160px] h-[24px] bg-indigo-900/10 rounded-full blur-md mt-20 mx-auto animate-pulse"></div>
+      </div>
+
+      {/* Typography & Progress */}
+      <div className="flex flex-col items-center w-full max-w-lg px-8">
+        <h1 className="text-4xl md:text-6xl font-semibold tracking-[0.25em] text-slate-800 font-brand mb-8 text-center drop-shadow-sm flex">
+          {fullText.split('').map((char, index) => (
+            <span 
+              key={index} 
+              className={`transition-opacity duration-150 ${index < charCount ? 'opacity-100' : 'opacity-0'}`}
+            >
+              {char}
+            </span>
+          ))}
+        </h1>
+        
+        <div className="w-full relative">
+          <div className="flex justify-between items-center mb-2 px-2">
+            <span className="text-xs md:text-sm font-semibold tracking-widest text-slate-400 uppercase font-brand">
+              {progress < 100 ? 'Rendering 3D Matrix...' : 'System Ready'}
+            </span>
+            <span className="text-sm md:text-base font-bold text-indigo-600 font-brand">
+              {Math.floor(progress)}%
+            </span>
+          </div>
+          
+          {/* Progress Bar Track */}
+          <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden shadow-inner">
+            {/* Progress Bar Fill */}
+            <div 
+              className="h-full bg-black rounded-full transition-all duration-200 ease-out shadow-[0_0_8px_rgba(0,0,0,0.4)]"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
         </div>
-
-      </main>
-
-      {/* Background Atmospheric Layer */}
-      <div className="fixed inset-0 pointer-events-none z-[-1] opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary-fixed to-transparent blur-3xl"></div>
       </div>
     </div>
   );
