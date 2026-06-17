@@ -141,6 +141,7 @@ function Home() {
 
         {/* Feature Preview (Bento Grid) */}
         <section className="w-full flex flex-col items-center gap-8 mt-12">
+          <div className="w-full max-w-4xl h-[2px] bg-gradient-to-r from-transparent via-secondary/70 to-transparent mb-2" data-animate="fade-in"></div>
           <div className="text-center mb-4" data-animate="fade-up">
             <h2 className="font-headline-md text-headline-md text-primary">Core Capabilities</h2>
           </div>

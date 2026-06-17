@@ -80,7 +80,7 @@ function Contact() {
 
         {/* Engineering Core */}
         <section className="flex flex-col gap-8">
-          <h2 className="font-headline-md text-headline-md text-primary text-center" data-animate="fade-up">Engineering Core</h2>
+          <h2 className="font-headline-md text-headline-md text-primary text-center" data-animate="fade-up">Our Amazing Team Members</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Team Member 1 */}
             <div className="glass-card rounded-xl overflow-hidden group card-shine" data-animate="fade-up" data-animate-delay="100">
