@@ -8,7 +8,7 @@ function LoadingScreen({ onComplete }) {
 
   useEffect(() => {
     let currentProgress = 0;
-    
+
     const interval = setInterval(() => {
       // Smoother, slightly slower jumps so the typing effect is visible
       currentProgress += Math.random() * 6 + 1;
@@ -33,7 +33,7 @@ function LoadingScreen({ onComplete }) {
   const charCount = Math.floor((progress / 100) * fullText.length);
 
   return (
-    <div 
+    <div
       className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-50 transition-all duration-700 ease-in-out ${isFadingOut ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100'}`}
     >
       <style>
@@ -98,7 +98,7 @@ function LoadingScreen({ onComplete }) {
           <div className="cube-face cube-face-top bg-indigo-600/10"></div>
           <div className="cube-face cube-face-bottom bg-indigo-600/10"></div>
         </div>
-        
+
         {/* Floor shadow */}
         <div className="w-[160px] h-[24px] bg-indigo-900/10 rounded-full blur-md mt-20 mx-auto animate-pulse"></div>
       </div>
@@ -107,15 +107,15 @@ function LoadingScreen({ onComplete }) {
       <div className="flex flex-col items-center w-full max-w-lg px-8">
         <h1 className="text-4xl md:text-6xl font-semibold tracking-[0.25em] text-slate-800 font-brand mb-8 text-center drop-shadow-sm flex">
           {fullText.split('').map((char, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className={`transition-opacity duration-150 ${index < charCount ? 'opacity-100' : 'opacity-0'}`}
             >
               {char}
             </span>
           ))}
         </h1>
-        
+
         <div className="w-full relative">
           <div className="flex justify-between items-center mb-2 px-2">
             <span className="text-xs md:text-sm font-semibold tracking-widest text-slate-400 uppercase font-brand">
@@ -125,11 +125,11 @@ function LoadingScreen({ onComplete }) {
               {Math.floor(progress)}%
             </span>
           </div>
-          
+
           {/* Progress Bar Track */}
           <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden shadow-inner">
             {/* Progress Bar Fill */}
-            <div 
+            <div
               className="h-full bg-black rounded-full transition-all duration-200 ease-out shadow-[0_0_8px_rgba(0,0,0,0.4)]"
               style={{ width: `${progress}%` }}
             ></div>
