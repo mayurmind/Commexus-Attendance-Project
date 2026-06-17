@@ -102,7 +102,7 @@ function Home() {
               <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-2">
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>wifi_off</span>
               </div>
-              <h3 className="font-headline-md text-[20px] text-primary">Offline-First Reliability</h3>
+              <h3 className="font-headline-md text-[20px] text-secondary font-bold">Offline-First Reliability</h3>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 SYNQUORA is designed to work independently inside the classroom environment.<br /><br />
                 The ESP32 creates a local attendance network, allowing students and teachers to use the system even without internet connectivity.
@@ -113,7 +113,7 @@ function Home() {
               <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-2">
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
               </div>
-              <h3 className="font-headline-md text-[20px] text-primary">Instant Attendance Processing</h3>
+              <h3 className="font-headline-md text-[20px] text-secondary font-bold">Instant Attendance Processing</h3>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 Mark attendance for an entire classroom within seconds.<br /><br />
                 The ESP32 handles multiple student requests simultaneously through an optimized queue-based processing system, ensuring smooth attendance collection without data loss.
@@ -124,7 +124,7 @@ function Home() {
               <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-2">
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>devices</span>
               </div>
-              <h3 className="font-headline-md text-[20px] text-primary">BYOD Architecture</h3>
+              <h3 className="font-headline-md text-[20px] text-secondary font-bold">BYOD Architecture</h3>
               <div className="font-body-md text-body-md text-on-surface-variant">
                 SYNQUORA uses devices students already own.
                 <p className="mt-2">Students can mark attendance using:</p>
