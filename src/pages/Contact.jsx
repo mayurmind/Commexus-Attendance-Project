@@ -3,6 +3,8 @@ import Footer from '../components/Footer';
 import { usePageAnimations } from '../hooks/usePageAnimations';
 import { useState } from 'react';
 import virajphoto from './Members Photo/Viraj Photo.jpeg';
+import parthphoto from './Members Photo/Parth Photo.jpg';
+import riteshphoto from './Members Photo/Ritesh Photo.jpg';
 
 
 function Contact() {
@@ -83,14 +85,14 @@ function Contact() {
             {/* Team Member 1 */}
             <div className="glass-card rounded-xl overflow-hidden group card-shine" data-animate="fade-up" data-animate-delay="100">
               <div className="h-48 bg-surface-container-high relative overflow-hidden">
-                <img alt="Professional headshot of Dr. Sarah Chen" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA5gDNwg6jDH3uqmwxX6Lh9rXBd5qyLGLeQpn34SH0QPVg9PhzzyGPRLjxsxjiMRDEUIv89YHgGwW7xsse5HAtMhGiswrh6Dft0Kuw4LRd_5VFPU3PwoeEKGA_mTsnKn4Pqaz7uFload4dYIJ8ETiuAkUBCcN04YN-6eryXze_QHsbEqvqZrwHt1rpvNZfgwo2kOxM33lHrsKhzICVGt93Y59lERU_iJnXwWNDt-phZWFSeE2jX8DEea6W-jpZIEEdgXdH53AMSfms" />
+                <img alt="Parth" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={parthphoto} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               <div className="p-6 relative">
                 <div className="absolute -top-6 right-6 w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center backdrop-blur-md">
                   <span className="material-symbols-outlined text-[16px] text-secondary">architecture</span>
                 </div>
-                <h3 className="font-body-lg text-body-lg text-primary font-bold">Dr. Sarah Chen</h3>
+                <h3 className="font-body-lg text-body-lg text-primary font-bold">Parth Patil</h3>
                 <p className="font-label-caps text-label-caps text-secondary mt-1">Principal Architect / Guide</p>
               </div>
             </div>
@@ -113,14 +115,14 @@ function Contact() {
             {/* Team Member 3 */}
             <div className="glass-card rounded-xl overflow-hidden group card-shine" data-animate="fade-up" data-animate-delay="300">
               <div className="h-48 bg-surface-container-high relative overflow-hidden">
-                <img alt="Professional headshot of Elena Vasquez" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoXH9DsVf8GNZ639eBE6fG5KRbvoonaWvqZm_zMMf_FOlGVhsoJ_uS8qhwSxemO_R62Y4TaB2cCpmKvXlY5UoSEg-Cfgn5zt3Z8tompytZNtsrkTzSSuXyolbs9TndKyPoMq-KPu2LaeiSbireJUPKbOJ37YX39A6GXo18KdBoAae3jpDfLnugTOcUH6ZbIPhA3e-RnKGjvIpsQEohP2WEAU1NeuINRAqoVzmr7zBVWA7T8BIzkuKHCWUWtjqXWY-iAR5zkMfIBBR4" />
+                <img alt="Ritesh" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={riteshphoto} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               <div className="p-6 relative">
                 <div className="absolute -top-6 right-6 w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center backdrop-blur-md">
                   <span className="material-symbols-outlined text-[16px] text-secondary">web</span>
                 </div>
-                <h3 className="font-body-lg text-body-lg text-primary font-bold">Elena Vasquez</h3>
+                <h3 className="font-body-lg text-body-lg text-primary font-bold">Ritesh Patil</h3>
                 <p className="font-label-caps text-label-caps text-secondary mt-1">Frontend Systems</p>
               </div>
             </div>
