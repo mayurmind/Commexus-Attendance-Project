@@ -1,6 +1,8 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { usePageAnimations } from '../hooks/usePageAnimations';
+import esp32ArchitecturePhoto from './Photos/ESP32 Architecture Photo.jpeg';
+
 
 function Architecture() {
   usePageAnimations();
@@ -23,7 +25,7 @@ function Architecture() {
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12" data-animate="fade-up" data-animate-delay="200">Explore the hardware and data flow behind the SYNQUORA Smart Attendance System.</p>
           <div className="w-full rounded-xl overflow-hidden glass-panel p-2 md:p-6 relative group" data-animate="scale-up" data-animate-delay="300">
             <div className="absolute inset-0 bg-gradient-to-tr from-secondary/5 via-transparent to-tertiary-fixed-dim/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-            <img alt="Architecture Diagram" className="w-full h-auto rounded-lg shadow-sm border border-outline-variant/20 object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvrGW2GRo1qU3b-MHIyYIzukR82wLTm45HPHw89YOxshVgxR-rBBo_GMIYUqR7WKJ3Bof5SE6dJjI5fFhiz3jioUNYXDCNcbPw5WxGa8jXVb7t7Wb3sDmeAAR9FIb_-kyobzIbXsnDJELUDDFb6Iw5sTbsP4VtJsRe8kpKA2O1Jt7bbBE8BR3wzNY6c9kbVojf73lRUpQTjySG4gQ7zdYZ9fCstI0PyqS50ds7eJRnkrl2WnNgMvcViO8c" />
+            <img alt="Architecture Diagram" className="w-full h-auto rounded-lg shadow-sm border border-outline-variant/20 object-cover" src={esp32ArchitecturePhoto} />
           </div>
         </section>
 

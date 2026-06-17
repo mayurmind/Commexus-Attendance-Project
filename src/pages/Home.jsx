@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 import { usePageAnimations } from '../hooks/usePageAnimations';
+import esp32Photo from './Photos/ESP32 Photo.jpeg';
 
 function Home() {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ function Home() {
           </div>
           <div className="flex-1 w-full relative group" data-animate="fade-right" data-animate-delay="300">
             <div className="absolute inset-0 bg-secondary/10 blur-3xl rounded-full transform scale-90 group-hover:scale-100 transition-transform duration-700"></div>
-            <img alt="3D ESP32 network illustration" className="w-full h-auto object-contain relative z-10 drop-shadow-2xl rounded-xl transition-transform duration-500 hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida/AP1WRLuXZzlx5mnHERE1d-Weiobk9PmwBpgkfdQQ9HJr1sgLot2HQJWIJq3q74oUJVk9sbcJ6V9s1X3akZUKmzpZN7OrjDeLTkqwBsD95fO5-ujhzX3kIo6OvHLxj-nyNs04IAw3wN-aL9R2b6mvxS7xK4LwEj68iulCAfr7f92BZDCvBvWKeSENphZXCV7MnvdesK3neklfEcJTNx9AdT0KQhMKrCZ9Yb-BygDTbooYV4kXRN-jZjmQZ5APLNsl" />
+            <img alt="ESP32 Photo" className="w-full h-auto object-contain relative z-10 drop-shadow-2xl rounded-xl transition-transform duration-500 hover:scale-[1.02]" src={esp32Photo} />
           </div>
         </section>
 
