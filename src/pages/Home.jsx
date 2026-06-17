@@ -96,13 +96,18 @@ function Home() {
               </div>
             </div>
           </div>
+          <div className="w-full max-w-4xl h-[2px] bg-gradient-to-r from-transparent via-secondary/70 to-transparent mb-4 mt-8" data-animate="fade-in"></div>
+          <div className="text-center w-full mb-2" data-animate="fade-up">
+            <h2 className="font-headline-md text-headline-md text-primary">How SYNQUORA Works</h2>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             {/* Solution Card 1 */}
             <div className="glass-card rounded-2xl p-8 flex flex-col items-start gap-4 hover:-translate-y-2 transition-transform duration-300 card-shine" data-animate="fade-up" data-animate-delay="100">
               <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-2">
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>wifi_off</span>
               </div>
-              <h3 className="font-headline-md text-[20px] text-secondary font-bold">Offline-First Reliability</h3>
+              <h3 className="font-headline-md text-[20px] text-black font-bold">Offline-First Reliability</h3>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 SYNQUORA is designed to work independently inside the classroom environment.<br /><br />
                 The ESP32 creates a local attendance network, allowing students and teachers to use the system even without internet connectivity.
@@ -113,7 +118,7 @@ function Home() {
               <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-2">
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
               </div>
-              <h3 className="font-headline-md text-[20px] text-secondary font-bold">Instant Attendance Processing</h3>
+              <h3 className="font-headline-md text-[20px] text-black font-bold">Instant Attendance Processing</h3>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 Mark attendance for an entire classroom within seconds.<br /><br />
                 The ESP32 handles multiple student requests simultaneously through an optimized queue-based processing system, ensuring smooth attendance collection without data loss.
@@ -124,7 +129,7 @@ function Home() {
               <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-2">
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>devices</span>
               </div>
-              <h3 className="font-headline-md text-[20px] text-secondary font-bold">BYOD Architecture</h3>
+              <h3 className="font-headline-md text-[20px] text-black font-bold">BYOD Architecture</h3>
               <div className="font-body-md text-body-md text-on-surface-variant">
                 SYNQUORA uses devices students already own.
                 <p className="mt-2">Students can mark attendance using:</p>
