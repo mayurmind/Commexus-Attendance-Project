@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 import { usePageAnimations } from '../hooks/usePageAnimations';
-import esp32Photo from './Photos/ESP32 Photo.jpeg';
+import esp32Photo from './Photos components/ESP32 Photo.jpeg';
 
 function Home() {
   const navigate = useNavigate();
@@ -41,35 +41,58 @@ function Home() {
         <section className="w-full flex flex-col items-center gap-12 mt-8">
           <div className="text-left md:text-center max-w-4xl flex flex-col gap-6" data-animate="fade-up">
             <h2 className="font-headline-md text-headline-md text-primary">The Problems With Traditional Attendance Systems</h2>
-            <div className="font-body-md text-body-md text-on-surface-variant grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              <div>
-                <strong className="text-primary block mb-2">Manual Roll Calls</strong>
-                <ul className="list-disc ml-5">
-                  <li>Consume valuable lecture time.</li>
-                  <li>Increase chances of human errors.</li>
-                  <li>Become difficult to manage in large classrooms.</li>
-                </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left w-full mt-4">
+              <div className="glass-card p-6 rounded-2xl border border-error/10 hover:border-error/30 transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center text-error">
+                    <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>person_edit</span>
+                  </div>
+                  <strong className="text-primary font-headline-md text-[18px]">Manual Roll Calls</strong>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-surface-variant/50 text-on-surface-variant px-3 py-1.5 rounded-lg text-[13px] font-medium border border-outline-variant/30 flex items-center gap-1.5"><span className="material-symbols-outlined text-[14px] text-error">timer</span> Consume valuable lecture time</span>
+                  <span className="bg-surface-variant/50 text-on-surface-variant px-3 py-1.5 rounded-lg text-[13px] font-medium border border-outline-variant/30 flex items-center gap-1.5"><span className="material-symbols-outlined text-[14px] text-error">error</span> Increase chances of human errors</span>
+                  <span className="bg-surface-variant/50 text-on-surface-variant px-3 py-1.5 rounded-lg text-[13px] font-medium border border-outline-variant/30 flex items-center gap-1.5"><span className="material-symbols-outlined text-[14px] text-error">groups</span> Difficult to manage large classes</span>
+                </div>
               </div>
-              <div>
-                <strong className="text-primary block mb-2">RFID-Based Systems</strong>
-                <ul className="list-disc ml-5">
-                  <li>Require dedicated hardware and student cards.</li>
-                  <li>Increase maintenance and installation costs.</li>
-                </ul>
+              
+              <div className="glass-card p-6 rounded-2xl border border-error/10 hover:border-error/30 transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center text-error">
+                    <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>credit_card</span>
+                  </div>
+                  <strong className="text-primary font-headline-md text-[18px]">RFID-Based Systems</strong>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-surface-variant/50 text-on-surface-variant px-3 py-1.5 rounded-lg text-[13px] font-medium border border-outline-variant/30 flex items-center gap-1.5"><span className="material-symbols-outlined text-[14px] text-error">memory</span> Dedicated hardware needed</span>
+                  <span className="bg-surface-variant/50 text-on-surface-variant px-3 py-1.5 rounded-lg text-[13px] font-medium border border-outline-variant/30 flex items-center gap-1.5"><span className="material-symbols-outlined text-[14px] text-error">build</span> High maintenance & installation costs</span>
+                </div>
               </div>
-              <div>
-                <strong className="text-primary block mb-2">Biometric Systems</strong>
-                <ul className="list-disc ml-5">
-                  <li>Have slower processing speed.</li>
-                  <li>Require physical contact and maintenance.</li>
-                </ul>
+
+              <div className="glass-card p-6 rounded-2xl border border-error/10 hover:border-error/30 transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center text-error">
+                    <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>fingerprint</span>
+                  </div>
+                  <strong className="text-primary font-headline-md text-[18px]">Biometric Systems</strong>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-surface-variant/50 text-on-surface-variant px-3 py-1.5 rounded-lg text-[13px] font-medium border border-outline-variant/30 flex items-center gap-1.5"><span className="material-symbols-outlined text-[14px] text-error">hourglass_bottom</span> Slower processing speed</span>
+                  <span className="bg-surface-variant/50 text-on-surface-variant px-3 py-1.5 rounded-lg text-[13px] font-medium border border-outline-variant/30 flex items-center gap-1.5"><span className="material-symbols-outlined text-[14px] text-error">touch_app</span> Requires physical contact</span>
+                </div>
               </div>
-              <div>
-                <strong className="text-primary block mb-2">Cloud-Based Attendance Systems</strong>
-                <ul className="list-disc ml-5">
-                  <li>Depend heavily on internet availability.</li>
-                  <li>Stop functioning during network failures.</li>
-                </ul>
+
+              <div className="glass-card p-6 rounded-2xl border border-error/10 hover:border-error/30 transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center text-error">
+                    <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>cloud_off</span>
+                  </div>
+                  <strong className="text-primary font-headline-md text-[18px]">Cloud-Based Systems</strong>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-surface-variant/50 text-on-surface-variant px-3 py-1.5 rounded-lg text-[13px] font-medium border border-outline-variant/30 flex items-center gap-1.5"><span className="material-symbols-outlined text-[14px] text-error">wifi</span> Dependent on internet</span>
+                  <span className="bg-surface-variant/50 text-on-surface-variant px-3 py-1.5 rounded-lg text-[13px] font-medium border border-outline-variant/30 flex items-center gap-1.5"><span className="material-symbols-outlined text-[14px] text-error">portable_wifi_off</span> Fails during network outages</span>
+                </div>
               </div>
             </div>
           </div>

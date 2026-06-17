@@ -2,6 +2,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { usePageAnimations } from '../hooks/usePageAnimations';
 import { useState } from 'react';
+import virajphoto from './Members Photo/Viraj Photo.jpeg';
+
 
 function Contact() {
   usePageAnimations();
@@ -96,14 +98,14 @@ function Contact() {
             {/* Team Member 2 */}
             <div className="glass-card rounded-xl overflow-hidden group card-shine" data-animate="fade-up" data-animate-delay="200">
               <div className="h-48 bg-surface-container-high relative overflow-hidden">
-                <img alt="Professional headshot of Marcus Roe" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXcn2uTMRwzArEeklhV_bzCH2DLfi6lIRYdHZdv49yDVIRtsmCrI_0y3wF_QgtgCMY_YW1JWJWphEGCjKOf3oVVb_1WjQGm9gixwhgx9Yu4rwjUZtz9TkDTHASELWm5dN_VtvpicAWipRbrHyg0fl0hgA0Rz62pHwE5yPLb0eUT-IdaOf713C_C1I2yH-drqdnlWq5dz2mzQQKxF-LM1tFzyWp9zKcCsrjdZDE3w2iJL-cLIi5bpRA_OVWuCvfNsJsUAwh3-TKbKPf" />
+                <img alt="Viraj" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={virajphoto} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               <div className="p-6 relative">
                 <div className="absolute -top-6 right-6 w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center backdrop-blur-md">
                   <span className="material-symbols-outlined text-[16px] text-secondary">terminal</span>
                 </div>
-                <h3 className="font-body-lg text-body-lg text-primary font-bold">Marcus Roe</h3>
+                <h3 className="font-body-lg text-body-lg text-primary font-bold">Viraj Pawar </h3>
                 <p className="font-label-caps text-label-caps text-secondary mt-1">Lead Engineer</p>
               </div>
             </div>

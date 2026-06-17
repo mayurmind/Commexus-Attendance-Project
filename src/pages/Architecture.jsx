@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { usePageAnimations } from '../hooks/usePageAnimations';
-import esp32ArchitecturePhoto from './Photos/ESP32 Architecture Photo.jpeg';
+import esp32ArchitecturePhoto from './Photos components/ESP32 Architecture Photo.jpeg';
 
 
 function Architecture() {
