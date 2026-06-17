@@ -57,20 +57,20 @@ function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2 input-glow group">
                   <label className="font-label-caps text-label-caps text-outline-variant group-focus-within:text-secondary transition-colors">Name</label>
-                  <input name="name" required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all" placeholder="Jane Doe" type="text" />
+                  <input name="name" required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all" placeholder="Enter Your Name" type="text" />
                 </div>
                 <div className="flex flex-col gap-2 input-glow group">
                   <label className="font-label-caps text-label-caps text-outline-variant group-focus-within:text-secondary transition-colors">Email</label>
-                  <input name="email" required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all" placeholder="jane@company.com" type="email" />
+                  <input name="email" required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all" placeholder="Enter Your Email" type="email" />
                 </div>
               </div>
               <div className="flex flex-col gap-2 input-glow group">
                 <label className="font-label-caps text-label-caps text-outline-variant group-focus-within:text-secondary transition-colors">Subject</label>
-                <input name="subject" required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all" placeholder="Partnership Inquiry" type="text" />
+                <input name="subject" required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all" placeholder="Enter Your Subject" type="text" />
               </div>
               <div className="flex flex-col gap-2 input-glow group">
                 <label className="font-label-caps text-label-caps text-outline-variant group-focus-within:text-secondary transition-colors">Message</label>
-                <textarea name="message" required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all resize-none" placeholder="How can we help you?" rows="4"></textarea>
+                <textarea name="message" required className="bg-surface-container-lowest/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-primary focus:outline-none transition-all resize-none" placeholder="Enter Your Message" rows="4"></textarea>
               </div>
               <button className="bg-secondary text-on-secondary w-full py-3 rounded-lg font-label-caps text-label-caps hover:opacity-90 transition-all duration-300 ease-in-out shadow-[0_8px_16px_rgba(0,88,190,0.2)] hover:shadow-[0_12px_24px_rgba(0,88,190,0.3)] hover:-translate-y-1" type="submit">Transmit Message</button>
               {result && <div className="text-center mt-4 font-body-md text-secondary">{result}</div>}
