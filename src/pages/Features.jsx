@@ -1,10 +1,10 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { useNavigate } from 'react-router-dom';
+
 import { usePageAnimations } from '../hooks/usePageAnimations';
 
 function Features() {
-  const navigate = useNavigate();
+
   usePageAnimations();
   return (
     <>
@@ -183,28 +183,49 @@ function Features() {
           </div>
 
           {/* Feature 10: Full Width Bottom */}
-          <div className="col-span-1 md:col-span-12 glass-card rounded-xl p-8 md:p-12 glow-effect transition-transform duration-300 flex flex-col md:flex-row items-center justify-between gap-8 mt-4 border-l-4 border-l-secondary" data-animate="fade-up">
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="material-symbols-outlined text-secondary">architecture</span>
+          <div className="col-span-1 md:col-span-12 glass-card rounded-xl p-8 md:p-12 glow-effect transition-transform duration-300 relative overflow-hidden mt-4 border-l-4 border-l-secondary card-shine" data-animate="fade-up">
+            {/* Background Accents */}
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-secondary/10 to-transparent pointer-events-none"></div>
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-secondary/20 rounded-full blur-[80px] pointer-events-none"></div>
+            
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-surface flex items-center justify-center shadow-sm border border-outline-variant/30 text-secondary">
+                  <span className="material-symbols-outlined">architecture</span>
+                </div>
                 <span className="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Enterprise Ready</span>
               </div>
-              <h3 className="font-display-lg-mobile text-display-lg-mobile text-primary mb-4">Scalable Design</h3>
-              <div className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-                The architecture supports:
-                <ul className="list-disc ml-5 mt-1 mb-2">
-                  <li>Small classrooms</li>
-                  <li>Large lecture halls</li>
-                  <li>Multiple academic environments</li>
-                </ul>
-                without requiring expensive infrastructure.
+              
+              <h3 className="font-display-lg-mobile md:text-display-lg text-primary mb-4">Scalable Design</h3>
+              
+              <div className="font-body-lg text-body-lg text-on-surface-variant max-w-4xl">
+                <p className="mb-6">
+                  The architecture is built to seamlessly adapt to your institution's needs, supporting a variety of scales without requiring expensive infrastructure.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
+                  <div className="flex items-center gap-3 bg-surface/50 p-4 rounded-xl border border-outline-variant/30 hover:border-secondary/50 transition-colors duration-300">
+                    <div className="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
+                      <span className="material-symbols-outlined text-[18px]">meeting_room</span>
+                    </div>
+                    <span className="font-medium text-primary text-[15px]">Small Classrooms</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 bg-surface/50 p-4 rounded-xl border border-outline-variant/30 hover:border-secondary/50 transition-colors duration-300">
+                    <div className="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
+                      <span className="material-symbols-outlined text-[18px]">domain</span>
+                    </div>
+                    <span className="font-medium text-primary text-[15px]">Large Lecture Halls</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 bg-surface/50 p-4 rounded-xl border border-outline-variant/30 hover:border-secondary/50 transition-colors duration-300">
+                    <div className="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
+                      <span className="material-symbols-outlined text-[18px]">account_balance</span>
+                    </div>
+                    <span className="font-medium text-primary text-[15px]">Multiple Environments</span>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="flex-shrink-0 w-full md:w-auto">
-              <button onClick={() => navigate('/architecture')} className="w-full md:w-auto px-8 py-4 bg-transparent border border-outline-variant/50 text-primary font-body-md font-medium rounded-lg hover:bg-surface-variant transition-colors duration-200 flex items-center justify-center gap-2">
-                View Technical Specs
-                <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
-              </button>
             </div>
           </div>
         </div>
