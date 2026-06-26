@@ -10,6 +10,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Security from './pages/Security';
 import LoadingScreen from './pages/LoadingScreen';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import './index.css';
 
 function ScrollToTop() {
@@ -61,6 +62,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <AppRoutes />
+      <SpeedInsights />
     </Router>
   );
 }
