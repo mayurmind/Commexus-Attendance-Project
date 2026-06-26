@@ -89,9 +89,6 @@ function Contact() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               <div className="p-6 relative">
-                <div className="absolute -top-6 right-6 w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center backdrop-blur-md">
-                  <span className="material-symbols-outlined text-[16px] text-secondary">architecture</span>
-                </div>
                 <h3 className="font-body-lg text-body-lg text-primary font-bold">Parth Patil</h3>
                 <p className="font-label-caps text-label-caps text-secondary mt-1">Principal Architect / Guide</p>
               </div>
@@ -104,9 +101,6 @@ function Contact() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               <div className="p-6 relative">
-                <div className="absolute -top-6 right-6 w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center backdrop-blur-md">
-                  <span className="material-symbols-outlined text-[16px] text-secondary">terminal</span>
-                </div>
                 <h3 className="font-body-lg text-body-lg text-primary font-bold">Viraj Pawar </h3>
                 <p className="font-label-caps text-label-caps text-secondary mt-1">Lead Engineer</p>
               </div>
@@ -119,9 +113,6 @@ function Contact() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               <div className="p-6 relative">
-                <div className="absolute -top-6 right-6 w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center backdrop-blur-md">
-                  <span className="material-symbols-outlined text-[16px] text-secondary">web</span>
-                </div>
                 <h3 className="font-body-lg text-body-lg text-primary font-bold">Ritesh Patil</h3>
                 <p className="font-label-caps text-label-caps text-secondary mt-1">Frontend Systems</p>
               </div>
@@ -134,9 +125,6 @@ function Contact() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               <div className="p-6 relative">
-                <div className="absolute -top-6 right-6 w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center backdrop-blur-md">
-                  <span className="material-symbols-outlined text-[16px] text-secondary">database</span>
-                </div>
                 <h3 className="font-body-lg text-body-lg text-primary font-bold">David Kim</h3>
                 <p className="font-label-caps text-label-caps text-secondary mt-1">Data Infrastructure</p>
               </div>
