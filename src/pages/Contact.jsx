@@ -36,7 +36,7 @@ function Contact() {
       {/* Ambient Background Glows */}
       <div className="ambient-glow top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
       <div className="ambient-glow top-1/2 right-0 translate-x-1/3 -translate-y-1/2" style={{ background: "radial-gradient(circle, rgba(6,182,212,0.05) 0%, rgba(255,255,255,0) 70%)" }}></div>
-      
+
       <Navbar />
 
       <main className="pt-[100px] pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col gap-[64px]">
@@ -132,7 +132,7 @@ function Contact() {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </>
   );
